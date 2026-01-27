@@ -10,10 +10,12 @@
         .login-box { background: var(--card); padding: 40px; border-radius: 16px; border: 1px solid var(--accent); width: 100%; max-width: 400px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .logo { color: var(--gold); font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; text-transform: uppercase; }
         h2 { margin-bottom: 30px; font-size: 1.2rem; color: var(--white); }
-        input { width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #1e293b; background: #1e293b; color: white; box-sizing: border-box; }
+        input { width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #1e293b; background: #1e293b; color: white; box-sizing: border-box; outline: none; }
+        input:focus { border-color: var(--gold); }
         button { width: 100%; padding: 12px; border-radius: 8px; border: none; background: var(--accent); color: #020617; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        button:hover { background: #0ea5e9; }
+        button:hover { background: #0ea5e9; transform: scale(1.02); }
         .footer-text { margin-top: 20px; font-size: 0.8rem; color: #64748b; }
+        a { color: var(--accent); text-decoration: none; font-size: 0.8rem; margin-top: 15px; display: inline-block; }
     </style>
 </head>
 <body>
@@ -26,6 +28,7 @@
         <input type="password" placeholder="Strategic Encryption" required>
         <button type="submit">Initialize Dashboard</button>
     </form>
+    <a href="index.html">← Return to Public Profile</a>
     <div class="footer-text">
         Authorized Personnel Only | System by SAE Intelligence
     </div>
