@@ -2,41 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Global Warranty Certificate - Salsabilah Empires</title>
+    <title>Official Warranty Certificate</title>
     <style>
         @page { size: A4; margin: 0; }
-        body { font-family: 'Georgia', serif; color: #0a0a0a; margin: 0; padding: 0; background-color: #fff; }
-        .cert-container { width: 190mm; height: 277mm; border: 12px double #002366; margin: 10mm auto; padding: 40px; position: relative; box-sizing: border-box; }
-        .header { text-align: center; border-bottom: 2px solid #002366; padding-bottom: 20px; }
-        .header h1 { font-size: 34pt; margin: 0; text-transform: uppercase; letter-spacing: 3px; }
-        .header p { font-size: 11pt; margin: 5px 0; font-weight: bold; color: #444; }
-        .content { margin-top: 50px; font-size: 15pt; line-height: 2; }
-        .footer { position: absolute; bottom: 70px; width: 85%; text-align: right; }
-        .footer strong { font-size: 16pt; display: block; margin-top: 10px; }
-        .stamp { position: absolute; bottom: 60px; left: 60px; opacity: 0.1; transform: rotate(-15deg); font-size: 50pt; font-weight: bold; color: #002366; }
+        body { 
+            font-family: 'Times New Roman', serif; 
+            margin: 0; padding: 0; 
+            -webkit-print-color-adjust: exact !important; /* Force colors in print */
+            print-color-adjust: exact !important;
+        }
+        .border { 
+            width: 190mm; height: 277mm; 
+            border: 10px double #002366 !important; /* Deep Royal Blue */
+            margin: 10mm auto; padding: 40px; position: relative;
+            box-sizing: border-box;
+            background: white;
+        }
+        .header h1 { 
+            font-size: 38pt; color: #000000 !important; 
+            margin: 0; text-align: center; font-weight: bold;
+        }
+        .header p { 
+            text-align: center; color: #002366 !important; 
+            font-size: 14pt; font-weight: bold; margin: 5px 0;
+        }
+        .content { margin-top: 60px; font-size: 16pt; line-height: 2; color: #000; }
+        .gold-text { color: #8B6508 !important; font-weight: bold; } /* Deep Bronze Gold */
+        .footer { position: absolute; bottom: 80px; right: 80px; text-align: right; }
+        .watermark { 
+            position: absolute; top: 40%; left: 10%; 
+            font-size: 90pt; color: rgba(0, 35, 102, 0.08) !important; 
+            transform: rotate(-35deg); z-index: -1; font-weight: bold;
+        }
     </style>
 </head>
-<body onload="window.print()">
-    <div class="cert-container">
-        <div class="stamp">AUTHENTIC</div>
+<body>
+    <div class="border">
+        <div class="watermark">SALSABILAH</div>
         <div class="header">
-            <h1>Certificate of Warranty</h1>
+            <h1>CERTIFICATE OF WARRANTY</h1>
             <p>SALSABILAH AMIN EMPIRES LTD.</p>
-            <p>UK REGISTERED COMPANY NO: 09814720 | EST. NOV 2024</p>
+            <p style="font-size: 11pt;">UK REGISTERED COMPANY NO: 09814720</p>
+            <hr style="border: 1px solid #8B6508;">
         </div>
         <div class="content">
-            <p>This document officially certifies the product warranty for:</p>
-            <p><strong>Customer Name:</strong> [DYNAMIC_NAME]</p>
-            <p><strong>Product Model:</strong> [DYNAMIC_MODEL]</p>
+            <p><strong>Customer Name:</strong> <span class="gold-text">[DYNAMIC_NAME]</span></p>
+            <p><strong>Product Model:</strong> <span class="gold-text">[DYNAMIC_MODEL]</span></p>
             <p><strong>Validation Date:</strong> [DYNAMIC_DATE]</p>
             <p><strong>Expiry Date:</strong> [DYNAMIC_EXPIRY]</p>
             <p><strong>Authorized Outlet:</strong> SR Electronics Park, Bangladesh</p>
         </div>
         <div class="footer">
-            <hr style="border: 0.5px solid #000; width: 250px; margin-left: auto;">
-            <strong>MD. AL AMIN SOHAG</strong>
-            Founder & Managing Director
+            <p style="font-size: 12pt; font-style: italic;">Certified by</p>
+            <strong style="font-size: 18pt;">MD. AL AMIN SOHAG</strong><br>
+            Managing Director
         </div>
     </div>
+    <script>window.onload = function() { window.print(); }</script>
 </body>
 </html>
