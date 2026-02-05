@@ -4,153 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAE ADMIN | GLOBAL STRATEGIC OPERATIONS</title>
-    <link rel="icon" type="image/jpeg" href="pavicon.png.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { 
-            --bg: #000810; 
-            --card: #001220; 
-            --accent: #38bdf8; 
-            --gold: #D4AF37; 
-            --white: #f8fafc;
-            --alert: #ef4444;
+            --bg: #000810; --card: #001220; --accent: #38bdf8; 
+            --gold: #D4AF37; --white: #f8fafc; --alert: #ef4444;
         }
         
         body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg); 
+            font-family: 'Inter', sans-serif; background-color: var(--bg); 
             background-image: radial-gradient(circle at center, #001e30 0%, #000810 100%);
-            color: var(--white); 
-            margin: 0; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            height: 100vh; 
-            overflow: hidden;
+            color: var(--white); margin: 0; display: flex; align-items: center; 
+            justify-content: center; height: 100vh; overflow: hidden;
         }
 
+        /* গ্লোয়িং ইফেক্ট */
         .login-box { 
-            background: var(--card); 
-            padding: 50px 40px; 
-            border-radius: 20px; 
-            border: 1px solid rgba(56, 189, 248, 0.2); 
-            width: 100%; 
-            max-width: 420px; 
-            text-align: center; 
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-            position: relative;
+            background: var(--card); padding: 50px 40px; border-radius: 20px; 
+            border: 1px solid rgba(56, 189, 248, 0.2); width: 100%; max-width: 420px; 
+            text-align: center; box-shadow: 0 0 30px rgba(56, 189, 248, 0.1);
+            position: relative; backdrop-filter: blur(10px);
         }
 
-        .login-box::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--gold));
-            border-radius: 20px 20px 0 0;
-        }
-
-        .logo { 
-            color: var(--gold); 
-            font-size: 1.8rem; 
-            font-weight: 900; 
-            margin-bottom: 10px; 
-            letter-spacing: 4px;
-            text-transform: uppercase; 
-        }
-
-        h2 { 
-            margin-bottom: 35px; 
-            font-size: 0.9rem; 
-            color: var(--accent); 
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            opacity: 0.8;
-        }
-
-        .input-group { position: relative; margin-bottom: 25px; }
-
+        .logo { color: var(--gold); font-size: 1.8rem; font-weight: 900; letter-spacing: 4px; text-transform: uppercase; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+        
         input { 
-            width: 100%; 
-            padding: 14px 15px; 
-            border-radius: 10px; 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            background: rgba(15, 23, 42, 0.6); 
-            color: white; 
-            box-sizing: border-box; 
-            outline: none; 
-            font-size: 1rem;
-            transition: 0.3s;
+            width: 100%; padding: 14px 15px; margin-bottom: 20px; border-radius: 10px; 
+            border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(15, 23, 42, 0.8); 
+            color: white; outline: none; transition: 0.3s;
         }
 
-        input:focus { 
-            border-color: var(--gold); 
-            background: rgba(15, 23, 42, 1);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
-        }
+        input:focus { border-color: var(--accent); box-shadow: 0 0 10px rgba(56, 189, 248, 0.3); }
 
         button { 
-            width: 100%; 
-            padding: 15px; 
-            border-radius: 10px; 
-            border: none; 
+            width: 100%; padding: 15px; border-radius: 10px; border: none; 
             background: linear-gradient(45deg, var(--accent), #0ea5e9); 
-            color: #020617; 
-            font-weight: 900; 
-            cursor: pointer; 
-            transition: 0.4s; 
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: #020617; font-weight: 900; cursor: pointer; transition: 0.4s; text-transform: uppercase;
         }
 
-        button:hover { 
-            transform: translateY(-2px); 
-            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
-            filter: brightness(1.1);
-        }
+        button:hover { transform: scale(1.02); box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
 
-        .footer-text { margin-top: 30px; font-size: 0.7rem; color: #475569; letter-spacing: 1px; }
+        /* স্ট্যাটাস ইন্ডিকেটর */
+        .status-bar { font-size: 0.7rem; color: var(--accent); margin-bottom: 20px; font-family: 'Courier New', Courier, monospace; }
         
-        .return-link { 
-            color: var(--gold); 
-            text-decoration: none; 
-            font-size: 0.75rem; 
-            margin-top: 20px; 
-            display: inline-block; 
-            opacity: 0.7;
-            transition: 0.3s;
-        }
-        .return-link:hover { opacity: 1; letter-spacing: 1px; }
-
-        .status-light {
-            width: 10px; height: 10px; background: #22c55e;
-            border-radius: 50%; display: inline-block; margin-right: 5px;
-            box-shadow: 0 0 8px #22c55e;
-        }
+        .pulse { animation: blink 1.5s infinite; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
 
 <div class="login-box">
     <div class="logo">SAE EMPIRES</div>
-    <h2><span class="status-light"></span> Operations Control Center</h2>
+    <div class="status-bar"><span class="pulse">●</span> SYSTEM: ENCRYPTED | CORE: ACTIVE</div>
     
-    <form onsubmit="event.preventDefault(); alert('AUTHENTICATING ENCRYPTION KEY...');">
-        <div class="input-group">
-            <input type="text" placeholder="ACCESS KEY ID" required>
-        </div>
-        <div class="input-group">
-            <input type="password" placeholder="STRATEGIC ENCRYPTION" required>
-        </div>
-        <button type="submit">Initialize Dashboard</button>
+    <form id="adminLogin">
+        <input type="text" id="accessKey" placeholder="ACCESS KEY ID" required>
+        <input type="password" id="strategicKey" placeholder="STRATEGIC ENCRYPTION" required>
+        <button type="button" onclick="validateAccess()">Initialize Dashboard</button>
     </form>
     
-    <a href="index.html" class="return-link"><i class="fas fa-arrow-left"></i> RETURN TO PUBLIC PROFILE</a>
-    
-    <div class="footer-text">
-        <i class="fas fa-shield-alt"></i> AUTHORIZED PERSONNEL ONLY<br>
-        SYSTEM SECURED BY SAE INTELLIGENCE
+    <div id="actionPanel" style="display: none; margin-top: 20px; border-top: 1px dashed rgba(56, 189, 248, 0.3); padding-top: 20px;">
+        <p style="color: var(--gold); font-size: 0.8rem;">OPERATIONS READY</p>
+        <button onclick="runTest()" style="background: var(--gold); margin-bottom: 10px;">TEST SMS & WARRANTY</button>
+    </div>
+
+    <div class="footer-text" style="margin-top: 20px; font-size: 0.7rem; opacity: 0.6;">
+        <i class="fas fa-shield-alt"></i> SAE INTELLIGENCE PROTOCOL V3.0
     </div>
 </div>
+
+<script src="price-guardian.js"></script>
+
+<script>
+    function validateAccess() {
+        const key = document.getElementById('accessKey').value;
+        const pass = document.getElementById('strategicKey').value;
+
+        // এখানে আপনার সিক্রেট পাসওয়ার্ড সেট করতে পারেন
+        if(key === "ALAMIN" && pass === "SAE2026") {
+            alert("ACCESS GRANTED. DECRYPTING CORE...");
+            document.getElementById('adminLogin').style.display = 'none';
+            document.getElementById('actionPanel').style.display = 'block';
+        } else {
+            alert("ACCESS DENIED: UNAUTHORIZED PERSONNEL DETECTED.");
+        }
+    }
+
+    function runTest() {
+        // আপনার price-guardian.js থেকে ফাংশন কল হচ্ছে
+        processSmartReminders("HASMOT ULLAH", "264649", "01719732134");
+        printOfficialWarranty("INV-2026-001", "HASMOT ULLAH", "Salsabilah Premium Package", "05/02/2027");
+    }
+</script>
 
 </body>
 </html>
