@@ -1,101 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAE ADMIN | GLOBAL STRATEGIC OPERATIONS</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>SAE ADMIN | Operations Control</title>
     <style>
-        :root { 
-            --bg: #000810; --card: #001220; --accent: #38bdf8; 
-            --gold: #D4AF37; --white: #f8fafc; --alert: #ef4444;
-        }
-        
-        body { 
-            font-family: 'Inter', sans-serif; background-color: var(--bg); 
-            background-image: radial-gradient(circle at center, #001e30 0%, #000810 100%);
-            color: var(--white); margin: 0; display: flex; align-items: center; 
-            justify-content: center; height: 100vh; overflow: hidden;
-        }
-
-        /* গ্লোয়িং ইফেক্ট */
-        .login-box { 
-            background: var(--card); padding: 50px 40px; border-radius: 20px; 
-            border: 1px solid rgba(56, 189, 248, 0.2); width: 100%; max-width: 420px; 
-            text-align: center; box-shadow: 0 0 30px rgba(56, 189, 248, 0.1);
-            position: relative; backdrop-filter: blur(10px);
-        }
-
-        .logo { color: var(--gold); font-size: 1.8rem; font-weight: 900; letter-spacing: 4px; text-transform: uppercase; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
-        
-        input { 
-            width: 100%; padding: 14px 15px; margin-bottom: 20px; border-radius: 10px; 
-            border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(15, 23, 42, 0.8); 
-            color: white; outline: none; transition: 0.3s;
-        }
-
-        input:focus { border-color: var(--accent); box-shadow: 0 0 10px rgba(56, 189, 248, 0.3); }
-
-        button { 
-            width: 100%; padding: 15px; border-radius: 10px; border: none; 
-            background: linear-gradient(45deg, var(--accent), #0ea5e9); 
-            color: #020617; font-weight: 900; cursor: pointer; transition: 0.4s; text-transform: uppercase;
-        }
-
-        button:hover { transform: scale(1.02); box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
-
-        /* স্ট্যাটাস ইন্ডিকেটর */
-        .status-bar { font-size: 0.7rem; color: var(--accent); margin-bottom: 20px; font-family: 'Courier New', Courier, monospace; }
-        
-        .pulse { animation: blink 1.5s infinite; }
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        body { background: #000810; color: #fff; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; }
+       .login-box { background: #001220; padding: 40px; border-radius: 15px; border: 1px solid #D4AF37; text-align: center; }
+        button { background: #D4AF37; color: #000; padding: 12px 25px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
-
-<div class="login-box">
-    <div class="logo">SAE EMPIRES</div>
-    <div class="status-bar"><span class="pulse">●</span> SYSTEM: ENCRYPTED | CORE: ACTIVE</div>
-    
-    <form id="adminLogin">
-        <input type="text" id="accessKey" placeholder="ACCESS KEY ID" required>
-        <input type="password" id="strategicKey" placeholder="STRATEGIC ENCRYPTION" required>
-        <button type="button" onclick="validateAccess()">Initialize Dashboard</button>
-    </form>
-    
-    <div id="actionPanel" style="display: none; margin-top: 20px; border-top: 1px dashed rgba(56, 189, 248, 0.3); padding-top: 20px;">
-        <p style="color: var(--gold); font-size: 0.8rem;">OPERATIONS READY</p>
-        <button onclick="runTest()" style="background: var(--gold); margin-bottom: 10px;">TEST SMS & WARRANTY</button>
+    <div class="login-box">
+        <h2 style="color:#D4AF37;">SAE INTELLIGENCE PROTOCOL</h2>
+        <input type="password" id="pass" placeholder="Strategic Key" style="display:block; width:100%; padding:10px; margin:20px 0;">
+        <button onclick="login()">Initialize Core Engine</button>
     </div>
-
-    <div class="footer-text" style="margin-top: 20px; font-size: 0.7rem; opacity: 0.6;">
-        <i class="fas fa-shield-alt"></i> SAE INTELLIGENCE PROTOCOL V3.0
-    </div>
-</div>
-
-<script src="price-guardian.js"></script>
-
-<script>
-    function validateAccess() {
-        const key = document.getElementById('accessKey').value;
-        const pass = document.getElementById('strategicKey').value;
-
-        // এখানে আপনার সিক্রেট পাসওয়ার্ড সেট করতে পারেন
-        if(key === "ALAMIN" && pass === "SAE2026") {
-            alert("ACCESS GRANTED. DECRYPTING CORE...");
-            document.getElementById('adminLogin').style.display = 'none';
-            document.getElementById('actionPanel').style.display = 'block';
-        } else {
-            alert("ACCESS DENIED: UNAUTHORIZED PERSONNEL DETECTED.");
+    <script>
+        function login() {
+            if(document.getElementById('pass').value === 'SAE2026') { window.location.href = 'software.html'; }
+            else { alert('Access Denied'); }
         }
-    }
-
-    function runTest() {
-        // আপনার price-guardian.js থেকে ফাংশন কল হচ্ছে
-        processSmartReminders("HASMOT ULLAH", "264649", "01719732134");
-        printOfficialWarranty("INV-2026-001", "HASMOT ULLAH", "Salsabilah Premium Package", "05/02/2027");
-    }
-</script>
-
+    </script>
 </body>
 </html>
