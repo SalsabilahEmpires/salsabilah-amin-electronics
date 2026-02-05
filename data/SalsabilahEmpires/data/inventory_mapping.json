@@ -1,15 +1,5 @@
 {
-    "Empire_Root": "Salsabilah Amin Empires Ltd.",
-    "Registration": "09814720",
-    "Branch": "SR Electronics Park",
-    "Data_Points": {
-        "Start_Date": "2024-11-14",
-        "Legacy_Start": "2024-11-15",
-        "Total_Invoices": 644,
-        "Field_Mapping": {
-            "Customer": "Name_English",
-            "Price": "Adjusted_Sync_Price",
-            "Warranty": "Global_Ten_Year_Circuit"
-        }
-    }
+  "products":,
+  "suppliers":,
+  "business_start": "2024-11-01"
 }
